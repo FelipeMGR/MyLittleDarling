@@ -9,7 +9,7 @@ namespace API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class UserController(DataContext context) : ControllerBase
+    public class UsersController(DataContext context) : ControllerBase
     {
         [HttpGet("{id:int}")]
         public async Task<ActionResult<AppUser>> GetUser(int id)
@@ -24,6 +24,7 @@ namespace API.Controllers
             return Ok(user);
         }
 
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> ListedUsers()
         {
 

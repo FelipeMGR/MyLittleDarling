@@ -2868,11 +2868,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\felip\\OneDrive\\Documents\\Projetos\\DatingApp\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Documents\\Projetos\\DatingApp\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "c:\\Users\\felip\\OneDrive\\Documents\\Projetos\\DatingApp\\API\\API.csproj",
+      "projectPath": "C:\\Users\\felip\\OneDrive\\Documents\\Projetos\\DatingApp\\API\\API.csproj",
       "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\felip\\OneDrive\\Documents\\Projetos\\DatingApp\\API\\obj\\",
+      "outputPath": "C:\\Users\\felip\\OneDrive\\Documents\\Projetos\\DatingApp\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
