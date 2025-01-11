@@ -304,3 +304,11 @@ C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\out\cl
 C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\out\client\tsconfig.spec.json
 C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\package-lock.json
 C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\package.json
+C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\felip\OneDrive\Documents\Projetos\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
