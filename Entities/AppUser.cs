@@ -8,11 +8,6 @@ public class AppUser
   public int Id { get; set; }
   public required string Name { get; set; }
   public int Age { get; set; }
-
-  public AppUser(int id, string name, int age)
-  {
-    Id = id;
-    Name = name;
-    Age = age;
-  }
+  public required byte[] PasswordHash { get; set; }
+  public required byte[] PasswordSalt { get; set; }
 }
