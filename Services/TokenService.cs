@@ -19,7 +19,7 @@ public class TokenService(IConfiguration configuration) : ITokenService
     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey)); //creates a signature key
 
     var claims = new List<Claim>(){ //especifies the claim for the user
-      new(ClaimTypes.NameIdentifier, user.Name)
+      new(ClaimTypes.NameIdentifier, user.UserName)
     };
 
     var tokenDescriptor = new SecurityTokenDescriptor()

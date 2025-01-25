@@ -20,7 +20,7 @@ public class AccountController(DataContext context, ITokenService tokenService) 
 
     var user = new AppUser
     {
-      Name = registerDTO.Username.ToLower(),
+      UserName = registerDTO.Username.ToLower(),
       Age = registerDTO.Age,
       PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.Password)),
       PasswordSalt = hmac.Key
@@ -31,7 +31,7 @@ public class AccountController(DataContext context, ITokenService tokenService) 
 
     return Ok(new UserDTO()
     {
-      UserName = user.Name,
+      UserName = user.UserName,
       Token = tokenService.CreateToken(user)
     });
   }
@@ -39,7 +39,7 @@ public class AccountController(DataContext context, ITokenService tokenService) 
   [HttpPost("login")]
   public async Task<ActionResult<UserDTO>> Login(LoginDTO login)
   {
-    var user = await context.Users.FirstOrDefaultAsync(x => x.Name == login.UserName.ToLower());
+    var user = await context.Users.FirstOrDefaultAsync(x => x.UserName == login.UserName.ToLower());
 
     if (user is null) return Unauthorized("Login is invalid.");
 
@@ -54,13 +54,13 @@ public class AccountController(DataContext context, ITokenService tokenService) 
 
     return Ok(new UserDTO()
     {
-      UserName = user.Name,
+      UserName = user.UserName,
       Token = tokenService.CreateToken(user)
     });
   }
   public async Task<bool> UserExists(string userName)
   {
-    return await context.Users.AnyAsync(x => x.Name.ToLower() == userName.ToLower());
+    return await context.Users.AnyAsync(x => x.UserName.ToLower() == userName.ToLower());
   }
 
 }
