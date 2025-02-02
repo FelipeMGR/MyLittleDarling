@@ -1,5 +1,8 @@
+using System.Text.Json;
 using API.Data;
+using API.DTO.Mapping;
 using API.Interfaces;
+using API.Repositories;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +21,8 @@ public static class AplicationServiceExtensions
 
     services.AddCors();
     services.AddScoped<ITokenService, TokenService>();
+    services.AddScoped<IUserRepository, UserRepository>();
+    services.AddAutoMapper(typeof(UserDtoMapping));
 
     return services;
   }

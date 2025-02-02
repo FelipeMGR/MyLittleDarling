@@ -6,18 +6,20 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using API.Repositories;
+using API.DTO;
+using AutoMapper;
 
 namespace API.Controllers;
 
 [Authorize]
-public class UsersController(DataContext context) : BaseApiController
+public class UsersController(IUserRepository userRepository) : BaseApiController
 {
     [Authorize]
     [HttpGet("{id:int}")]
-    public async Task<ActionResult<AppUser>> GetUser(int id)
+    public async Task<ActionResult<MemberDTO>> GetUserById(int id)
     {
-        var user = await context.Users.FindAsync(id);
-
+        MemberDTO? user = await userRepository.GetUserById(id);
         if (user == null)
         {
             return BadRequest("User not found");
@@ -28,16 +30,25 @@ public class UsersController(DataContext context) : BaseApiController
 
     [AllowAnonymous]
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
+    public async Task<ActionResult<IEnumerable<MemberDTO>>> GetUsers()
     {
 
-        var users = await context.Users.ToListAsync();
-
+        IEnumerable<MemberDTO?> users = await userRepository.GetAllMembersAsync();
         if (users == null)
         {
             return BadRequest("There's seen to be a error in your request. Please, try again.");
         }
 
         return Ok(users);
+    }
+
+    [HttpGet("{username}")]
+    public async Task<ActionResult> GetUserByUserName(string name)
+    {
+        MemberDTO? user = await userRepository.GetMemberAsync(name);
+
+        if (user == null) return NotFound("User not found");
+
+        return Ok(user);
     }
 }
