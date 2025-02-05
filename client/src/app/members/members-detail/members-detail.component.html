@@ -1,1 +1,48 @@
-<p>members-detail works!</p>
+@if(member){
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.knownAs}}" class="card-img img-thumbnail">
+      <div class="card-body">
+        <strong>Location: </strong>
+        <p>{{member.city}}, {{member.country}}</p>
+        <strong>Age: </strong>
+        <p>{{member.age}}</p>
+        <strong>Last Active: </strong>
+        <p>{{member.lastActive}}</p>
+        <strong>Member since: </strong>
+        <p>{{member.created}}</p>
+      </div>
+      <div class="card-footer">
+        <div class="btn-group d-flex">
+          <button class="btn btn-success">Like</button>
+          <button class="btn btn-primary">Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <tabset class="member-tabset">
+      <tab heading="About {{member.knownAs}}">
+        <h4>An introduction to {{member.knownAs}}'s self</h4>
+        <p>{{member.introduction}}</p>
+      </tab>
+      <tab heading="Interests">
+        <h4>{{member.knownAs}}'s interests! This is your chance to know him/her better!</h4>
+        <p>{{member.interests}}</p>
+      </tab>
+      <tab heading="Photos" #photoTab="tab">
+        <h4>Take a look at some of {{member.knownAs}}'s best pics.</h4>
+        @if(photoTab.active){
+        <gallery [items]="image">
+        </gallery>
+        }
+      </tab>
+      <tab heading="Messages">
+        <h4>Humm, messages...! Interesting, huh?</h4>
+        <p>Messages to be added</p>
+      </tab>
+    </tabset>
+  </div>
+</div>
+}

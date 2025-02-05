@@ -19,7 +19,7 @@ public class UsersController(IUserRepository userRepository) : BaseApiController
     [HttpGet("{id:int}")]
     public async Task<ActionResult<MemberDTO>> GetUserById(int id)
     {
-        MemberDTO? user = await userRepository.GetUserById(id);
+        var user = await userRepository.GetUserById(id);
         if (user == null)
         {
             return BadRequest("User not found");
@@ -43,9 +43,9 @@ public class UsersController(IUserRepository userRepository) : BaseApiController
     }
 
     [HttpGet("{username}")]
-    public async Task<ActionResult> GetUserByUserName(string name)
+    public async Task<ActionResult> GetUserByUserName(string username)
     {
-        MemberDTO? user = await userRepository.GetMemberAsync(name);
+        var user = await userRepository.GetMemberAsync(username);
 
         if (user == null) return NotFound("User not found");
 

@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-messages',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './messages.component.html',
   styleUrl: './messages.component.css'
 })
